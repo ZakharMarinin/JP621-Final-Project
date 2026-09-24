@@ -1,0 +1,73 @@
+{
+  "start_room": "entrance",
+  "win_condition": {
+    "type": "defeat_enemy",
+    "enemy": "Дракон"
+  },
+  "rooms": {
+    "entrance": {
+      "description": "Вы стоите у входа в подземелье, на каменном полу лежит ключ",
+      "exits": { "north": "hall" },
+      "items": ["rusty_key"],
+      "enemies": [],
+      "npcs": [],
+      "locked_exits": {}
+    },
+    "hall": {
+      "description": "Большой зал, вы видите тяжёлую дверь и тёмный проход в стене",
+      "exits": { "south": "entrance", "east": "armory" },
+      "items": ["health_potion"],
+      "enemies": ["goblin"],
+      "npcs": ["old_guard"],
+      "locked_exits": { "east": "rusty_key" }
+    },
+    "armory": {
+      "description": "Вы зашли в оружейную. На стенах доспехи, а на столе меч. Надо бы взять меч с собой, ну мало ли что",
+      "exits": { "west": "hall", "north": "library" },
+      "items": ["iron_sword", "big_potion"],
+      "enemies": [],
+      "npcs": [],
+      "locked_exits": {}
+    },
+    "crypt": {
+      "description": "Склеп. Ну тут без коментариев",
+      "exits": { "north": "hall", "east": "library" },
+      "items": [],
+      "enemies": ["skeleton"],
+      "npcs": [],
+      "locked_exits": {}
+    },
+    "library": {
+      "description": "Старая библиотека. Пыльные полки и какой-то магический свиток",
+      "exits": { "south": "armory", "west": "crypt", "north": "throne_room" },
+      "items": ["magic_scroll"],
+      "enemies": [],
+      "npcs": ["librarian"],
+      "locked_exits": {}
+    },
+    "throne_room": {
+      "description": "Тронный зал. Из-за трона выходит дракон",
+      "exits": { "south": "library" },
+      "items": [],
+      "enemies": ["dragon"],
+      "npcs": [],
+      "locked_exits": {}
+    }
+  },
+  "items": {
+    "rusty_key":    { "type": "key",    "name": "Ржавый ключ",       "opens": "rusty_key",       "description": "Старый ключ покрытый ржавчиной" },
+    "health_potion":{ "type": "potion", "name": "Зелье лечения",     "heal": 30,                  "description": "Красная жидкость в бутылочке" },
+    "big_potion":   { "type": "potion", "name": "Большое зелье",     "heal": 60,                  "description": "Густая тёмнокрасная жидкость в большой, круглой бутылке" },
+    "iron_sword":   { "type": "weapon", "name": "Железный меч",      "bonus_damage": 6,           "description": "Тяжёлый, но надёжный клинок." },
+    "magic_scroll": { "type": "weapon", "name": "Свиток силы",       "bonus_damage": 4,           "description": "Древний слиток русов наполняет вас силой" }
+  },
+  "enemies": {
+    "goblin":   { "class": "Goblin",   "name": "Гоблин",       "hp": 20, "damage": 4, "loot": "health_potion" },
+    "skeleton": { "class": "Skeleton", "name": "Скелет",       "hp": 30, "damage": 6, "loot": null },
+    "dragon":   { "class": "Enemy",    "name": "Дракон",       "hp": 80, "damage": 12, "loot": null }
+  },
+  "npcs": {
+    "old_guard": { "name": "Старый страж",  "dialogue": "Берегись гоблинов в зале. На востоке дверь заперта — поищи ключ у входа, а в склепе не задерживайся ", "reward": null },
+    "librarian": { "name": "Библиотекарь",  "dialogue": "Возьми свиток он придаст тебе силы. За троном живёт Дракон. Если ты его победишь обретёшь свободу. Ты же взял меч из оружейной?", "reward": "magic_scroll" }
+  }
+}
