@@ -1,0 +1,77 @@
+{
+  "pets": [
+    {
+      "name": "Рекс",
+      "species": "dragon",
+      "created_at": "2026-09-24T14:11:54",
+      "last_updated": "2026-09-24T14:14:29",
+      "stats": {
+        "hunger": 10,
+        "energy": 85,
+        "health": 100,
+        "mood": 100
+      },
+      "state": "awake",
+      "history": [
+        {
+          "timestamp": "2026-09-24T14:11:54",
+          "event": "created",
+          "details": "Питомец Рекс создан."
+        },
+        {
+          "timestamp": "2026-09-24T14:12:35",
+          "event": "played",
+          "details": "Дракон подышал огнем во время игры (+25 к настроению)."
+        }
+      ]
+    },
+    {
+      "name": "Байт",
+      "species": "robot",
+      "created_at": "2026-09-24T14:11:54",
+      "last_updated": "2026-09-24T14:14:29",
+      "stats": {
+        "hunger": 0,
+        "energy": 100,
+        "health": 100,
+        "mood": 100
+      },
+      "state": "sleeping",
+      "history": [
+        {
+          "timestamp": "2026-09-24T14:11:54",
+          "event": "created",
+          "details": "Питомец Байт создан."
+        },
+        {
+          "timestamp": "2026-09-24T14:14:29",
+          "event": "sleep",
+          "details": "Подключен к сети для зарядки."
+        }
+      ]
+    },
+    {
+      "name": "Барсик",
+      "species": "cat",
+      "created_at": "2026-09-24T14:12:03",
+      "last_updated": "2026-09-24T14:14:29",
+      "stats": {
+        "hunger": 0,
+        "energy": 100,
+        "health": 100,
+        "mood": 100
+      },
+      "state": "awake",
+      "history": [
+        {
+          "timestamp": "2026-09-24T14:12:03",
+          "event": "created",
+          "details": "Питомец Барсик создан."
+        }
+      ]
+    }
+  ],
+  "resources": {
+    "medkits": 2
+  }
+}
