@@ -1,40 +1,81 @@
-# JP621 — финальный проект
+# JP621 Final Project - Dungeon
 
-Репозиторий курса с заданиями финального проекта. Два независимых варианта —
-студент выбирает один (можно и оба), реализует консольное приложение на
-Python с полноценным ООП и JSON-хранилищем, сдаёт через pull request.
+A text-based dungeon adventure game made in Python.
 
-**Дедлайн: 25 сентября 2026 года.** Pull request должен быть открыт до этой
-даты — изменения после дедлайна не учитываются, если не указано иное.
+## How to Run
 
-## Задания
+Start a new game:
 
-| Проект | Что это | ТЗ |
-|---|---|---|
-| **Терравариум** | Симулятор виртуальных питомцев в терминале | [`variants/ТЗ 1 СLI_PETS.md`](variants/ТЗ%201%20СLI_PETS.md) |
-| **Подземелье** | Текстовый квест-движок с пошаговой боевой системой | [`variants/ТЗ 2 CLI_QUEST.md`](variants/ТЗ%202%20CLI_QUEST.md) |
-
-Оба ТЗ требуют все 4 принципа ООП по существу, а не для галочки — подробности
-в самих файлах.
-
-## Сайт
-
-Оформленные версии обоих ТЗ и инструкция по сдаче опубликованы как небольшой
-статический сайт: `docs/index.html`. После включения GitHub Pages (Settings →
-Pages → Branch `main` → `/docs`) он будет доступен по адресу
-`https://zakharmarinin.github.io/JP621-Final-Project/`.
-
-## Структура репозитория
-
-```
-variants/    исходные ТЗ (markdown)
-docs/        сайт с заданиями и инструкцией по сдаче (публикуется на Pages)
-students/    сюда попадают папки со сдаваемыми проектами студентов (через PR)
+```text
+python main.py --new-game
 ```
 
-## Как сдать проект
+Load a saved game:
 
-Коротко: fork этого репозитория → отдельная ветка → регулярные коммиты →
-pull request сюда, с заголовком `Фамилия Имя — Название проекта`. Подробная
-пошаговая инструкция — на странице «Как сдавать работу» сайта
-(`docs/submission.html`) или в разделе 12 каждого ТЗ.
+```text
+python main.py --load data/save1.json
+```
+
+## Commands
+
+* `look` — Look around
+* `go <direction>` — Move
+* `take <item>` — Pick up an item
+* `use <item>` — Use an item
+* `inventory` — Show inventory
+* `talk` — Talk to an NPC
+* `talk <person>` — Talk to a specific NPC
+* `attack <enemy>` — Fight an enemy
+* `save` — Save the game
+* `load` — Load the game
+* `help` — Show commands
+* `quit` — Exit the game
+
+## World Map
+
+```text
+Entrance
+/      \
+Hall    Library
+|  \       |
+|   Crypt  |
+|     |    |
+Armory  Treasury
+    \    /
+   Throne Room
+```
+
+## Game Features
+
+* 7 rooms
+* Multiple paths
+* 6+ items
+* Potions, weapons and keys
+* Goblin and Skeleton enemies
+* NPC dialogue
+* Turn-based combat
+* Inventory system
+* Locked doors
+* Save and load system
+* Win condition
+
+## Project Structure
+
+```text
+main.py
+models/
+    character.py
+    item.py
+    room.py
+engine/
+    combat.py
+    save_manager.py
+    world_loader.py
+data/
+    world.json
+    save1.json
+```
+
+## Goal
+
+Explore the dungeon, collect items, defeat enemies, unlock doors and reach the throne room.

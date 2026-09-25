@@ -1,0 +1,179 @@
+{
+    "start_room": "entrance",
+
+    "win_condition": {
+        "type": "reach_room",
+        "room": "throne_room"
+    },
+
+    "items": {
+        "rusty_key": {
+            "type": "key",
+            "name": "Rusty Key",
+            "opens": "armory_door"
+        },
+
+        "health_potion": {
+            "type": "potion",
+            "name": "Health Potion",
+            "heal": 30
+        },
+
+        "small_potion": {
+            "type": "potion",
+            "name": "Small Health Potion",
+            "heal": 15
+        },
+
+        "iron_sword": {
+            "type": "weapon",
+            "name": "Iron Sword",
+            "damage": 10
+        },
+
+        "silver_key": {
+            "type": "key",
+            "name": "Silver Key",
+            "opens": "treasury_door"
+        },
+
+        "steel_sword": {
+            "type": "weapon",
+            "name": "Steel Sword",
+            "damage": 15
+        },
+
+        "strong_potion": {
+            "type": "potion",
+            "name": "Strong Health Potion",
+            "heal": 40
+        }
+    },
+
+    "enemies": {
+        "goblin": {
+            "name": "Goblin",
+            "hp": 25,
+            "damage": 5
+        },
+
+        "skeleton": {
+            "name": "Skeleton",
+            "hp": 40,
+            "damage": 8
+        }
+    },
+
+    "npcs": {
+        "old_guard": {
+            "name": "Old Guard",
+            "dialogue": "Be careful, traveler. The dungeon has many dangers. Find the keys and reach the throne room."
+        }
+    },
+
+    "rooms": {
+        "entrance": {
+            "description": "You are standing at the entrance of a dark underground dungeon.",
+            "exits": {
+                "north": "hall",
+                "east": "library"
+            },
+            "items": [
+                "rusty_key"
+            ],
+            "enemies": [],
+            "npcs": []
+        },
+
+        "hall": {
+            "description": "A long stone hall. You hear strange sounds in the darkness.",
+            "exits": {
+                "south": "entrance",
+                "west": "crypt",
+                "east": {
+                    "room": "armory",
+                    "requires": "armory_door"
+                }
+            },
+            "items": [
+                "health_potion"
+            ],
+            "enemies": [
+                "goblin"
+            ],
+            "npcs": [
+                "old_guard"
+            ]
+        },
+
+        "library": {
+            "description": "An old library filled with dusty books and ancient maps.",
+            "exits": {
+                "west": "entrance",
+                "north": "treasury"
+            },
+            "items": [
+                "small_potion"
+            ],
+            "enemies": [],
+            "npcs": []
+        },
+
+        "crypt": {
+            "description": "A cold crypt with old stone graves. Something is moving nearby.",
+            "exits": {
+                "east": "hall",
+                "north": "treasury"
+            },
+            "items": [
+                "silver_key"
+            ],
+            "enemies": [
+                "skeleton"
+            ],
+            "npcs": []
+        },
+
+        "armory": {
+            "description": "An abandoned armory containing old weapons.",
+            "exits": {
+                "west": "hall",
+                "north": "throne_room"
+            },
+            "items": [
+                "iron_sword"
+            ],
+            "enemies": [],
+            "npcs": []
+        },
+
+        "treasury": {
+            "description": "A hidden treasury filled with old treasures and weapons.",
+            "exits": {
+                "south": "crypt",
+                "west": "library",
+                "north": {
+                    "room": "throne_room",
+                    "requires": "treasury_door"
+                }
+            },
+            "items": [
+                "steel_sword",
+                "strong_potion"
+            ],
+            "enemies": [],
+            "npcs": []
+        },
+
+        "throne_room": {
+            "description": "You enter a huge throne room. An ancient throne stands at the end of the room. You have reached the heart of the dungeon.",
+            "exits": {
+                "south": "treasury",
+                "west": "armory"
+            },
+            "items": [],
+            "enemies": [],
+            "npcs": []
+        }
+    }
+}
