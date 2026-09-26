@@ -1,0 +1,21 @@
+{
+    "stats": {
+        "all_win": 0,
+        "all_game": 0,
+        "classic_game": 0,
+        "classic_win": 0,
+        "classic_easy_game": 0,
+        "classic_easy_win": 0,
+        "classic_normal_game": 0,
+        "classic_normal_win": 0,
+        "flip_game": 0,
+        "flip_win": 0,
+        "flip_easy_game": 0,
+        "flip_easy_win": 0,
+        "flip_normal_game": 0,
+        "flip_normal_win": 0
+    },
+    "name": null,
+    "replays": [],
+    "last_parameter": null
+}
